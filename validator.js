@@ -38,7 +38,12 @@ exports.domValidation = (htmlText, validations) => {
                             // TODO: Check expected values in each element, push to results validation
                             for(let rule of expectedValues){
                                 const {attribute, value} = rule;
-                                const elementAttribute = element.getAttribute(attribute);
+                                let elementAttribute = '';
+                                if (attribute == 'innerHTML'){
+                                  elementAttribute = element[attribute];
+                                } else {
+                                  elementAttribute = element.getAttribute(attribute);
+                                }
                                 const valid = elementAttribute == value;
                                 const cause = valid ? `Element '${selector}': attribute '${attribute}' has value '${value}'`: `Element '${selector}': attribute '${attribute}' has value '${elementAttribute}' instead of '${value}'`;
                                 results.push({selector, valid, cause});
