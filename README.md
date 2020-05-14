@@ -47,7 +47,7 @@ support@yourcompany.com</a>.
 
 <P> This is a new paragraph!
 
-<P> <B>This is a new paragraph!</B>
+</P> <B>This is a new paragraph!</B>
 
 <BR> <B><I>This is a new sentence without a paragraph break, in bold italics.</I></B>
 
@@ -61,11 +61,14 @@ support@yourcompany.com</a>.
 
 ### JSON request body
 ```json
-{ "content": "PEhUTUw+Cgo8SEVBRD4KCjxUSVRMRT5Zb3VyIFRpdGxlIEhlcmU8L1RJVExFPgoKPC9IRUFEPgoKPEJPRFkgQkdDT0xPUj0iRkZGRkZGIiBjb2xvcj0iYmxhY2siPgoKPENFTlRFUj48SU1HIFNSQz0iY2xvdWRzLmpwZyIgQUxJR049IkJPVFRPTSI+IDwvQ0VOVEVSPgoKPEhSPgoKPGEgaHJlZj0iaHR0cDovL3NvbWVncmVhdHNpdGUuY29tIj5MaW5rIE5hbWU8L2E+CgppcyBhIGxpbmsgdG8gYW5vdGhlciBuaWZ0eSBzaXRlCgo8SDE+VGhpcyBpcyBhIEhlYWRlcjwvSDE+Cgo8SDI+VGhpcyBpcyBhIE1lZGl1bSBIZWFkZXI8L0gyPgoKU2VuZCBtZSBtYWlsIGF0IDxhIGhyZWY9Im1haWx0bzpzdXBwb3J0QHlvdXJjb21wYW55LmNvbSI+CgpzdXBwb3J0QHlvdXJjb21wYW55LmNvbTwvYT4uCgo8UD4gVGhpcyBpcyBhIG5ldyBwYXJhZ3JhcGghCgo8UD4gPEI+VGhpcyBpcyBhIG5ldyBwYXJhZ3JhcGghPC9CPgoKPEJSPiA8Qj48ST5UaGlzIGlzIGEgbmV3IHNlbnRlbmNlIHdpdGhvdXQgYSBwYXJhZ3JhcGggYnJlYWssIGluIGJvbGQgaXRhbGljcy48L0k+PC9CPgoKPEhSPgoKPC9CT0RZPgoKPC9IVE1MPg==",
-  "validations": [
+{ "content": "PEhUTUw+Cgo8SEVBRD4KCjxUSVRMRT5Zb3VyIFRpdGxlIEhlcmU8L1RJVExFPgoKPC9IRUFEPgoKPEJPRFkgQkdDT0xPUj0iRkZGRkZGIiBjb2xvcj0iYmxhY2siIGNsYXNzPSJmaXJzdC1jbGFzcyBzZWNvbmQtY2xhc3MgdGhyaWQtY2xhc3MiPgoKPENFTlRFUj48SU1HIFNSQz0iY2xvdWRzLmpwZyIgQUxJR049IkJPVFRPTSI+IDwvQ0VOVEVSPgoKPEhSPgoKPGEgaHJlZj0iaHR0cDovL3NvbWVncmVhdHNpdGUuY29tIj5MaW5rIE5hbWU8L2E+CgppcyBhIGxpbmsgdG8gYW5vdGhlciBuaWZ0eSBzaXRlCgo8SDE+VGhpcyBpcyBhIEhlYWRlcjwvSDE+Cgo8SDI+VGhpcyBpcyBhIE1lZGl1bSBIZWFkZXI8L0gyPgoKU2VuZCBtZSBtYWlsIGF0IDxhIGhyZWY9Im1haWx0bzpzdXBwb3J0QHlvdXJjb21wYW55LmNvbSI+CgpzdXBwb3J0QHlvdXJjb21wYW55LmNvbTwvYT4uCgo8UD4gVGhpcyBpcyBhIG5ldyBwYXJhZ3JhcGghCgo8L1A+IDxCPlRoaXMgaXMgYSBuZXcgcGFyYWdyYXBoITwvQj4KCjxCUj4gPEI+PEk+VGhpcyBpcyBhIG5ldyBzZW50ZW5jZSB3aXRob3V0IGEgcGFyYWdyYXBoIGJyZWFrLCBpbiBib2xkIGl0YWxpY3MuPC9JPjwvQj4KCjxIUj4KCjwvQk9EWT4KCjwvSFRNTD4=",
+  "structureValidation": {
+	"rootSelector": "body",
+  	"elementsList": ["center", "img", "hr", "a", "h1", "h2", "a", "p", "b", "br", "b", "i", "hr"]
+  },
+  "valueValidations": [
 	  	{
 	  		"selector": "body",
-	  		"numberOfElements": 1,
 	  		"expectedValues": [
 	  			{ 
 	  			  "attribute": "bgcolor",
@@ -74,44 +77,25 @@ support@yourcompany.com</a>.
 	  			{
 	  			  "attribute": "color",
 	  			  "value": "black"
-	  			}
-	  		]
-	  	},
-	  	{
-	  		"selector": "p",
-	  		"numberOfElements": 2
-	  	},
-	  	{
-	  		"selector": "a",
-	  		"numberOfElements": 0,
-	  		"expectedValues": [
-	  			{
-	  				"attribute": "href",
-		  			"value": "http://somegreatsite.com"},
-	  			{
-	  				"attribute": "href",
-		  			"value": "mailto:support@yourcompany.com"
-	  			}
-	  		]
-	  	},
-	  	{
-	  		"selector": "a",
-	  		"numberOfElements": 2,
-	  		"expectedValues": [
-	  			{
-	  				"attribute": "href",
-		  			"value": "http://somegreatsite.com",
-		  			"matches": 1
 	  			},
+	  			{ 
+	  			  "attribute": "class",
+	  			  "value": ["first-class", "second-class"]
+	  			}
+	  		]
+	  	},
+	  	{
+	  		"selector": "a",
+	  		"expectedValues": [
 	  			{
 	  				"attribute": "href",
-		  			"value": "mailto:support@yourcompany.com",
-		  			"matches": 1
-	  			}
+		  			"value": "http://somegreatsite.com"}
 	  		]
 	  	}
   	]
 }
+
+
 ```
 
 ### Result
@@ -119,9 +103,9 @@ support@yourcompany.com</a>.
 ```json
 [
     {
-        "selector": "body",
-        "valid": true,
-        "cause": "Number of elements found (1) matches expected number 1."
+        "rootSelector": "body",
+        "validStructure": true,
+        "causeStructure": "Structure [center,img,hr,a,h1,h2,a,p,b,br,b,i,hr] follows given structure [center,img,hr,a,h1,h2,a,p,b,br,b,i,hr]"
     },
     {
         "selector": "body",
@@ -134,19 +118,9 @@ support@yourcompany.com</a>.
         "cause": "Element 'body': attribute 'color' has value 'black'"
     },
     {
-        "selector": "p",
+        "selector": "body",
         "valid": true,
-        "cause": "Number of elements found (2) matches expected number 2."
-    },
-    {
-        "selector": "a",
-        "valid": false,
-        "cause": "Element with selector 'a' exists."
-    },
-    {
-        "selector": "a",
-        "valid": true,
-        "cause": "Number of elements found (2) matches expected number 2."
+        "cause": "Element 'body': attribute 'class' has value 'first-class,second-class'"
     },
     {
         "selector": "a",
@@ -156,17 +130,7 @@ support@yourcompany.com</a>.
     {
         "selector": "a",
         "valid": false,
-        "cause": "Element 'a': attribute 'href' has value 'http://somegreatsite.com' instead of 'mailto:support@yourcompany.com'"
-    },
-    {
-        "selector": "a",
-        "valid": false,
         "cause": "Element 'a': attribute 'href' has value 'mailto:support@yourcompany.com' instead of 'http://somegreatsite.com'"
-    },
-    {
-        "selector": "a",
-        "valid": true,
-        "cause": "Element 'a': attribute 'href' has value 'mailto:support@yourcompany.com'"
     }
 ]
 ```
