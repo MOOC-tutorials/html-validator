@@ -9,9 +9,13 @@ module.exports = (app) => {
   app.post('/', (req, res) => {
     /* TODO: Body should have:
      {  content: "encoded html in base64",
-        validations: [
+        structureValidation: {
+          rootSelector: ,
+          elementsList: ['html', 'head', 'title', 'boby', 'div', 'h1'...],
+        valueValidations: [
           { selector: ,
             numberOfElements: ,
+            indexOf: ,
             expectedValues: [
               [{attribute: ,
                value: },
@@ -21,13 +25,13 @@ module.exports = (app) => {
                value: },
                {attribute: ,
                value: },..],.. expected values elements selected should have
-              ]
+              ],
           }
         ]
     */
-    const {body:{content, validations}} = req;
+    const {body:{content, structureValidation, valueValidations}} = req;
     const htmlText = Buffer.from(content, 'base64');
-    const result = domValidation(htmlText, validations);
+    const result = domValidation(htmlText, structureValidation, valueValidations);
     res.json(result);
   });
 };
