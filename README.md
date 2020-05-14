@@ -27,7 +27,7 @@ Send a post request to [here](https://html-validator.glitch.me) with a body simi
 
 </HEAD>
 
-<BODY BGCOLOR="FFFFFF" color="black">
+<BODY BGCOLOR="FFFFFF" color="black" class="first-class second-class thrid-class">
 
 <CENTER><IMG SRC="clouds.jpg" ALIGN="BOTTOM"> </CENTER>
 
