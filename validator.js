@@ -1,13 +1,6 @@
 const jsdom = require("jsdom");
+const _ = require("lodash");
 const { JSDOM } = jsdom;
-
-
-const checkRules = (element, rules) => {
-    let result = false;
-    let cause = '';
-    
-    return {result, cause}
-}
 
 exports.domValidation = (htmlText, structure, validations) => {
     /*
@@ -28,7 +21,7 @@ exports.domValidation = (htmlText, structure, validations) => {
             // to get all elements children and children of children given node in the HTML 
             const elementsInOrder = Array.from(rootElement.querySelectorAll("*"))
                                             .map( el => { return el.tagName.toLowerCase()});
-            validStructure = elementsList.length === elementsList.filter(ele => elementsInOrder.includes(ele)).length
+            validStructure = _.isEqual(elementsInOrder, elementsList);
             causeStructure = validStructure? `Structure [${elementsInOrder}] follows given structure [${elementsList}]`
                                             : `Structure [${elementsInOrder}] doesn't follow given structure [${elementsList}]`;
             results.push({rootSelector, validStructure, causeStructure});
