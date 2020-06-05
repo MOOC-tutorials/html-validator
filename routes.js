@@ -29,9 +29,10 @@ module.exports = (app) => {
           }
         ]
     */
-    const {body:{content, structureValidation, valueValidations}} = req;
+    const {body:{cssContent="", content, structureValidation, valueValidations}} = req;
     const htmlText = Buffer.from(content, 'base64');
-    const result = domValidation(htmlText, structureValidation, valueValidations);
+    const cssText = Buffer.from(cssContent, 'base64');
+    const result = domValidation(htmlText, cssText, structureValidation, valueValidations);
     res.json(result);
   });
 };
