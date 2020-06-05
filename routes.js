@@ -8,14 +8,13 @@ module.exports = (app) => {
   
   app.post('/', (req, res) => {
     /* TODO: Body should have:
-     {  content: "encoded html in base64",
+     {  cssContent: "encoded css in base64"
+        content: "encoded html in base64",
         structureValidation: {
           rootSelector: ,
           elementsList: ['html', 'head', 'title', 'boby', 'div', 'h1'...],
         valueValidations: [
           { selector: ,
-            numberOfElements: ,
-            indexOf: ,
             expectedValues: [
               [{attribute: ,
                value: },
